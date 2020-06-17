@@ -1,26 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ChartBox from './containers/ChartBox';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    const genres = [
+      {name: "All Songs", url: "https://itunes.apple.com/gb/rss/topsongs/limit=20/json"},
+      {name: "Dance", url: "https://itunes.apple.com/gb/rss/topsongs/limit=20/genre=17/json"}
+      ]
+
+    return (
+      <ChartBox genres={genres} />
+    );
+  }
 }
 
 export default App;
